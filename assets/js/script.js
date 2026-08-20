@@ -96,18 +96,30 @@ document.getElementById('year').textContent = new Date().getFullYear();
   // frame — this isn't a seamless 360° loop, so it stops firmly at both
   // ends instead of wrapping around into a jump cut.
   var DRAG_SENSITIVITY = 4; // px of pointer movement per frame step
-  var dragging = false;
+  var DIRECTION_THRESHOLD = 8; // px of movement before we commit to a direction
+  // Touch gestures go through three states instead of a plain on/off drag
+  // flag: 'watching' (finger is down, direction not yet decided), 'dragging'
+  // (confirmed horizontal — we own the gesture), or 'scrolling' (confirmed
+  // vertical — untouched, left entirely to the browser's native scroll).
+  // We deliberately do NOT call setPointerCapture or preventDefault until a
+  // horizontal intent is confirmed. Relying on `touch-action` in CSS alone
+  // isn't enough on iOS Safari, which can ignore touch-action on elements
+  // that also carry a 3D transform (this card has perspective/rotateY) —
+  // so the gesture is arbitrated here in JS instead, which works regardless
+  // of that bug.
+  var gestureState = 'idle';
   var dragStartX = 0;
+  var dragStartY = 0;
   var dragStartIndex = 0;
+  var activePointerId = null;
 
   function hideHint() {
     if (dragHint) dragHint.classList.add('is-hidden');
   }
 
-  function onPointerDown(e) {
-    dragging = true;
+  function beginDrag(e) {
+    gestureState = 'dragging';
     userInteracted = true;
-    dragStartX = e.clientX;
     dragStartIndex = currentIndex;
     card.classList.add('is-dragging');
     hideHint();
@@ -116,15 +128,44 @@ document.getElementById('year').textContent = new Date().getFullYear();
     }
   }
 
+  function onPointerDown(e) {
+    gestureState = 'watching';
+    activePointerId = e.pointerId;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    dragStartIndex = currentIndex;
+  }
+
   function onPointerMove(e) {
-    if (!dragging) return;
+    if (gestureState === 'idle' || gestureState === 'scrolling') return;
+    if (activePointerId != null && e.pointerId !== activePointerId) return;
+
     var deltaX = e.clientX - dragStartX;
-    var frameDelta = Math.round(deltaX / DRAG_SENSITIVITY);
-    setIndex(dragStartIndex - frameDelta);
+    var deltaY = e.clientY - dragStartY;
+
+    if (gestureState === 'watching') {
+      if (Math.abs(deltaX) < DIRECTION_THRESHOLD && Math.abs(deltaY) < DIRECTION_THRESHOLD) {
+        return; // not enough movement yet to know the intent
+      }
+      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+        // Vertical intent — hand this gesture back to the browser entirely.
+        // We never captured the pointer or called preventDefault, so the
+        // page scrolls exactly as if this element weren't here.
+        gestureState = 'scrolling';
+        return;
+      }
+      beginDrag(e);
+    }
+
+    if (gestureState === 'dragging') {
+      var frameDelta = Math.round(deltaX / DRAG_SENSITIVITY);
+      setIndex(dragStartIndex - frameDelta);
+    }
   }
 
   function onPointerUp() {
-    dragging = false;
+    gestureState = 'idle';
+    activePointerId = null;
     card.classList.remove('is-dragging');
   }
 
