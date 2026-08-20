@@ -159,7 +159,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
     if (gestureState === 'dragging') {
       var frameDelta = Math.round(deltaX / DRAG_SENSITIVITY);
-      setIndex(dragStartIndex - frameDelta);
+      setIndex(dragStartIndex + frameDelta);
     }
   }
 
