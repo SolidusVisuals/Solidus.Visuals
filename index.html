@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solidus Visuals — Product Visuals for Ecommerce Brands</title>
+<meta name="description" content="I make premium product photos, animations, and AI videos for ecommerce brands. Polished visuals, crafted with precision, built to sell.">
+
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">Solidus<span class="brand-dot">Visuals</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-ghost nav-cta">Start a project</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero-section">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Product visuals for ecommerce brands</p>
+        <h1 class="hero-title">
+          Product visuals<br>
+          that make people<br>
+          <span class="italic">stop and buy.</span>
+        </h1>
+        <p class="hero-sub">
+          I craft high-converting 3D product animations and AI-powered commercial visuals for e-commerce brands.
+           Premium CGI production built to elevate your product without the limits of a traditional photoshoot.
+          Visuals crafted to turn browsers into buyers.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">See the work</a>
+          <a href="#contact" class="btn btn-text">Start a project <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="sequence-wrap">
+          <div class="sequence-card" id="sequence-card">
+            <canvas id="sequence-canvas" aria-label="Product render — drag or use the slider to rotate"></canvas>
+            <div class="drag-hint" id="drag-hint" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="13" height="13"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Drag to rotate
+            </div>
+          </div>
+          <div class="orbit-ring" aria-hidden="true"></div>
+        </div>
+        <div class="sequence-scrubber">
+          <span class="sequence-scrubber-end" aria-hidden="true"></span>
+          <input type="range" id="sequence-range" class="sequence-range" min="0" max="71" step="1" value="0" aria-label="Rotate product view">
+          <span class="sequence-scrubber-end" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span></div>
+
+  <!-- PORTFOLIO -->
+  <section id="work" class="section portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Portfolio</p>
+        <h2 class="section-title">Crafted for Impact</h2>
+        <p class="section-sub">Dynamic 3D animations and artistic visuals designed to elevate modern product storytelling. </p>
+      </div>
+
+      <div class="grid-gallery">
+
+        <!--
+          YouTube facade: shows a local WebP poster with a play button and injects the
+          real YouTube iframe only after a click, so nothing from youtube.com loads on
+          initial page load. Swap data-yt-id for your real video ID (the part after
+          "v=" or "youtu.be/" in the YouTube URL). Swap the poster image for a real
+          frame from your video — see README.md for the recommended way to export a
+          WebP still. -->
+        <div class="tile tile-video tile-youtube" style="grid-column: 1; grid-row: 1;" data-yt-id="zSp09bIqrCg">
+          <button class="yt-facade" type="button" aria-label="Play showcase reel — Insta360 X5, product-in-hand lifestyle reel">
+            <img class="tile-media" src="assets/images/insta360banner.webp" alt="Man holding an Insta360 X5 camera on a rooftop at sunset — click to play" loading="lazy" width="1280" height="720">
+            <span class="tile-overlay">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="tile-label">
+                <span class="tile-num">Reel</span>
+                <span class="tile-name">Insta360 X5 — lifestyle reel</span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <button class="tile tile-vertical" style="grid-column: 2; grid-row: 1 / span 3;" data-lightbox="assets/images/sarimonstersite.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/sarimonstersite.webp" alt="Monster Energy can amid shattering ice, CGI product render" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">06</span><span class="tile-name">Monster Energy — ice-burst CGI</span></span></span>
+        </button>
+
+        <button class="tile" style="grid-column: 1; grid-row: 2;" data-lightbox="assets/images/esteelaudercreme.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/esteelaudercreme.webp" alt="Estée Lauder Advanced Night Repair dropper bottle, top-down studio render" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">02</span><span class="tile-name">Estée Lauder — top-down render</span></span></span>
+        </button>
+
+        <button class="tile" style="grid-column: 1; grid-row: 3;" data-lightbox="assets/images/lancasterforsite.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/lancasterforsite.webp" alt="Lancaster Golden Lift Sculpting Cream jar, studio product render" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">04</span><span class="tile-name">Lancaster — studio jar render</span></span></span>
+        </button>
+
+        <button class="tile" style="grid-column: 1; grid-row: 7;" data-lightbox="assets/images/esteelauderfinal.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/esteelauderfinal.webp" alt="Estée Lauder Advanced Night Repair bottle, candlelit lifestyle render" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">01</span><span class="tile-name">Estée Lauder — candlelit render</span></span></span>
+        </button>
+
+        <button class="tile" style="grid-column: 2; grid-row: 4;" data-lightbox="assets/images/insta360xray.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/insta360xray.webp" alt="Insta360 X5 camera x-ray graphic showing 5-year battery guarantee" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">07</span><span class="tile-name">Insta360 X5 — battery x-ray</span></span></span>
+        </button>
+
+        <button class="tile" style="grid-column: 1; grid-row: 8;" data-lightbox="assets/images/insta360hero.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/insta360hero.webp" alt="Insta360 X5 hero render with dramatic X5 typography" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">03</span><span class="tile-name">Insta360 X5 — hero render</span></span></span>
+        </button>
+
+        <button class="tile" style="grid-column: 2; grid-row: 5;" data-lightbox="assets/images/skinrender.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/skinrender.webp" alt="Skin cross-section CGI render showing cellular hydration layers" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">08</span><span class="tile-name">Skincare — cellular cross-section</span></span></span>
+        </button>
+
+        <button class="tile" style="grid-column: 1; grid-row: 9;" data-lightbox="assets/images/vitaminc.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/vitaminc.webp" alt="Vitamin C serum droplet, macro ingredient render" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">05</span><span class="tile-name">Vitamin C — macro droplet render</span></span></span>
+        </button>
+
+        <!--
+          YouTube facade: shows a local WebP poster with a play button and injects the
+          real YouTube iframe only after a click, so nothing from youtube.com loads on
+          initial page load. Swap data-yt-id for your real video ID (the part after
+          "v=" or "youtu.be/" in the YouTube URL). Swap the poster image for a real
+          frame from your video — see README.md for the recommended way to export a
+          WebP still. -->
+        <div class="tile tile-video tile-youtube" style="grid-column: 2; grid-row: 6;" data-yt-id="JcE5Z01uWPc">
+          <button class="yt-facade" type="button" aria-label="Play 3D animation reel — Estée Lauder studio turntable">
+            <img class="tile-media" src="assets/images/esteelauderbanner.webp" alt="Estée Lauder Advanced Night Repair bottle, studio turntable render — click to play" loading="lazy" width="1280" height="720">
+            <span class="tile-overlay">
+              <span class="play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              </span>
+              <span class="tile-label">
+                <span class="tile-num">Reel</span>
+                <span class="tile-name">Estée Lauder — studio turntable</span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <button class="tile tile-vertical" style="grid-column: 1; grid-row: 4 / span 3;" data-lightbox="assets/images/sodacanforsite.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/sodacanforsite.webp" alt="Solidus seltzer can with fresh fruit, cinematic forest render" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">09</span><span class="tile-name">Solidus — forest fruit render</span></span></span>
+        </button>
+
+        <button class="tile tile-vertical" style="grid-column: 2; grid-row: 7 / span 3;" data-lightbox="assets/images/mavimonstersite.webp" aria-label="View full image">
+          <img class="tile-media" src="assets/images/mavimonstersite.webp" alt="Monster Mango Loco can close-up with ice, macro CGI render" loading="lazy">
+          <span class="tile-overlay"><span class="tile-label"><span class="tile-num">10</span><span class="tile-name">Monster Mango Loco — ice macro</span></span></span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span></div>
+
+  <!-- TRANSFORMATION -->
+  <section id="transform" class="section transform">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow center">Before &amp; after</p>
+        <h2 class="section-title">See the transformation</h2>
+        <p class="section-sub center">Drag the slider. This is the difference a good render makes.</p>
+      </div>
+
+      <div class="transform-grid">
+
+        <figure class="compare">
+          <div class="compare-frame">
+            <img class="compare-media compare-after" src="assets/images/raybanforsite.webp" alt="Finished studio render of a bottle">
+            <div class="compare-before-wrap">
+              <img class="compare-media compare-before" src="assets/images/raybanbefore.webp" alt="Raw reference photo of a bottle before editing">
+            </div>
+            <span class="compare-tag compare-tag-before">Before</span>
+            <span class="compare-tag compare-tag-after">After</span>
+            <div class="compare-handle" aria-hidden="true">
+              <span class="compare-handle-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 6l-6 6 6 6M9 6l0 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <input type="range" class="compare-range-input" min="0" max="100" value="50" aria-label="Drag to compare before and after, bottle">
+          </div>
+          <figcaption class="compare-caption">Raw photo turned into a studio-ready render</figcaption>
+        </figure>
+
+        <figure class="compare">
+          <div class="compare-frame">
+            <img class="compare-media compare-after" src="assets/images/insta360peak.webp" alt="Finished studio render of a jar">
+            <div class="compare-before-wrap">
+              <img class="compare-media compare-before" src="assets/images/insta360peakbefore.webp" alt="Raw reference photo of a jar before editing">
+            </div>
+            <span class="compare-tag compare-tag-before">Before</span>
+            <span class="compare-tag compare-tag-after">After</span>
+            <div class="compare-handle" aria-hidden="true">
+              <span class="compare-handle-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 6l-6 6 6 6M9 6l0 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <input type="range" class="compare-range-input" min="0" max="100" value="50" aria-label="Drag to compare before and after, jar">
+          </div>
+          <figcaption class="compare-caption">Plain shot turned into a premium hero shot</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span></div>
+
+  <!-- HOW IT WORKS -->
+  <section id="process" class="section process">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow center">How it works</p>
+        <h2 class="section-title">From idea to finished visual</h2>
+        <p class="section-sub center">Four simple steps. No studio visit required.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Share your product</h3>
+            <p>Send me a few photos or details about your product. That's all I need to start.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>I create your visuals</h3>
+            <p>I build your photos or videos to match your brand and your goals.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>You review and revise</h3>
+            <p>Tell me what you think. I'll fine-tune the details until it feels right.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <h3>Get your files</h3>
+            <p>Download your final visuals, ready to use on your store, ads, or socials.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span></div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="wrap about-inner">
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title">I help brands look premium online.</h2>
+        <p class="about-text">
+          I craft digital product commercials and photorealistic visuals for modern e-commerce brands.
+          By replacing traditional studio shoots with advanced 3D CGI and AI workflows,
+          I eliminate physical production limits—giving you complete creative freedom, dynamic motion, and showroom-grade assets that drive sales.
+        </p>
+      </div>
+      <ul class="about-points">
+        <li>
+          <span class="point-icon" aria-hidden="true"></span>
+          <div>
+            <h3>Scroll-Stopping Impact</h3>
+            <p>Hook attention in the first 2 seconds with cinematic camera movements and high-energy motion engineered for paid ads.</p>
+          </div>
+        </li>
+        <li>
+          <span class="point-icon" aria-hidden="true"></span>
+          <div>
+            <h3>Tactile Realism</h3>
+            <p>Micro-textures, custom lighting, and macro close-ups that let customers feel the quality of your product right through the screen.</p>
+          </div>
+        </li>
+        <li>
+          <span class="point-icon" aria-hidden="true"></span>
+          <div>
+            <h3>Zero Production Bottlenecks</h3>
+            <p>No physical sample shipping, no rented studios, no weather delays. Launch creative campaigns in days, not weeks.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span></div>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub center">Everything you need to know about working together.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How much does a Product Animation cost?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Depending on your wants and needs it can range anywhere from $100 to $10,000. I recommend sending an email with your request and I'll give you a quote within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How long will it take to receive my final product?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>It depends on the lenght of the project. It can be anywhere from 24 hours to 14 days depending on the size of the project. Rush delivery is available on request — just mention your deadline when you reach out.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I get revisions?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>You got one revision for free. 3D is very intensive. All revisions after that will charge an hourly rate.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I get started?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Just send an email with a few photos or details about your product. From there I'll put together a quote and timeline, and we can get moving right away.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>I need the text to be in a different language than English. Is this possible?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Absolutely. I can create your visuals with text or labeling in any language — just include the copy you'd like used when you send over your product details.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span></span></div>
+
+  <!-- CTA / CONTACT -->
+  <section id="contact" class="section cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <div class="cta-card-glow" aria-hidden="true"></div>
+
+        <p class="eyebrow center">Let's talk</p>
+        <h2 class="cta-title center">Ready for visuals that <span class="italic">sell?</span></h2>
+        <p class="cta-sub center">Stop blending in with plain photos. Let's create visuals that make your brand look premium — and make people want to buy.</p>
+
+        <div class="cta-divider" aria-hidden="true"></div>
+
+        <p class="quick-copy-label">Quick copy</p>
+        <div class="quick-copy-row">
+          <button type="button" class="copy-chip" data-copy="solidusvisuals@gmail.com">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M8 8h11v11H8z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><path d="M5 16V5h11" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>
+            <span class="copy-chip-text">solidusvisuals@gmail.com</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="brand small">Solidus<span class="brand-dot">Visuals</span></span>
+    <p>Product visualization · Product animation · AI video</p>
+    <p class="footer-year">&copy; <span id="year"></span> Solidus Visuals. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+  </button>
+  <div class="lightbox-content" id="lightbox-content"></div>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
