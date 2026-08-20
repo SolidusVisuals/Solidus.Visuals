@@ -317,7 +317,7 @@ body {
   aspect-ratio: 700 / 1019;
   transform: perspective(1200px) rotateY(-6deg);
   cursor: grab;
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
 }
